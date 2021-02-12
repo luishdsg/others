@@ -11,11 +11,14 @@ if(e.keyCode === 13){
     this.Email.focus();
       switch ( target) {
            case 'Nome' :
+                break;
             this.Email.focus();
            case 'Idade' :
             this.Idade.focus();
            case 'Enviar' :
              this.Enviar.focus();
+         default :
+            this.Nome.focus();
 }
             }
     render(){
@@ -28,15 +31,15 @@ if(e.keyCode === 13){
                 </div>
                 <div>
                     <span>Email:</span>
-                    <input ref={(input) => {this.Email = input}} type="email" />
+                    <input onKeyUp={this.onKeyUp.bind(this. 'Email')} ref={(input) => {this.Email = input}} type="email" />
                 </div>
                 <div>
                     <span>Idade:</span>
-                    <input ref={(input) => {this.Idade = input}} type="number" />
+                    <input onKeyUp={this.onKeyUp.bind(this. 'Idade')} ref={(input) => {this.Idade = input}} type="number" />
                 </div>
                 <div>
                     <span>Enviar</span>
-                    <input ref={(input) => {this.Enviar = input}} type="submit" onClick={this.onClick} value="submit"/>
+                    <input onKeyUp={this.onKeyUp.bind(this. 'Enviar')}  ref={(input) => {this.Enviar = input}} type="submit" onClick={this.onClick} value="submit"/>
                 </div>
             </div>
         );
