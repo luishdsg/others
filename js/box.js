@@ -9,6 +9,13 @@ console.log(this.Nome.value)
             onKeyUp = (e) => {
 if(e.keyCode === 13){
     this.Email.focus();
+      switch ( target) {
+           case 'Nome' :
+            this.Email.focus();
+           case 'Idade' :
+            this.Idade.focus();
+           case 'Enviar' :
+             this.Enviar.focus();
 }
             }
     render(){
@@ -17,7 +24,7 @@ if(e.keyCode === 13){
             <div className="App">
                 <div>
                     <span>Nome:</span>
-                    <input onKeyUp={this.onKeyUp}  ref={(input) => {this.Nome = input}} type="text" />
+                    <input onKeyUp={this.onKeyUp.bind(this. 'Nome')}  ref={(input) => {this.Nome = input}} type="text" />
                 </div>
                 <div>
                     <span>Email:</span>
